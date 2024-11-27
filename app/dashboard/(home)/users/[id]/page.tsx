@@ -10,7 +10,12 @@ export default async function UpdateUser ({params}:{params: Promise<{id:string}>
     // console.log(userData,"the coinsData in page.tsx");
     
     return (
-        <Form data = {userData?.response} />
+        <div className="content-body">
+            <div className="container">
+                <Form data = {userData?.response} />
+            </div>
+        </div>
+        
     )
 
 }

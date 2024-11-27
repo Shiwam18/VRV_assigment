@@ -94,7 +94,7 @@ const Trade = () => {
                   <tbody>
 
                     <>
-                      {VRV_users?.map((item:any, idx:number)=>(
+                      {VRV_users?.length && VRV_users?.map((item:any, idx:number)=>(
                         <tr key={idx}>
                           <td>{item?.username}</td>
                           <td>{item?.role}</td>

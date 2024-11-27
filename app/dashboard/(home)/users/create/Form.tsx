@@ -50,7 +50,9 @@ export default function Form ({data}:{data:any}) {
     }
 
     return (
-        <div className="card-body">
+        <div className="content-body">
+            <div className="container">
+            <div className="card-body">
             
             <div className="row">
             
@@ -127,6 +129,8 @@ export default function Form ({data}:{data:any}) {
                 </div>
             </div>
             </div>
-      </div>
+        </div>
+            </div>
+        </div>
     )
 }

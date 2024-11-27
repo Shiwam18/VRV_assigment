@@ -59,7 +59,7 @@ export const authOptions: NextAuthOptions = {
 
                 const match = await bcrypt.compare(password, user.password);
                 if(match){
-                    console.log(user, "this is user in authoptions!")
+                    // console.log(user, "this is user in authoptions!")
                     return user;
                 }
                 else{

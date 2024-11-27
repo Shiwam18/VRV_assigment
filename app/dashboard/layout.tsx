@@ -23,11 +23,10 @@ export default function DashboardLayout({
       <SessionWrapper>
       <body  className="bg-theme bg-theme3 nunito-body">
         <Header />
-        <div className="content-body">
-            <div className="container">
-                {children}
-            </div>
-        </div>
+        
+            
+        {children}
+            
         <ToastContainer />
         <BootstrapClient />
 

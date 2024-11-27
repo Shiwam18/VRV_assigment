@@ -2,16 +2,17 @@
 
 import React from "react"
 import Image from "next/image";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Dropdown from "react-bootstrap/Dropdown";
 import Link from "next/link";
-import logo from "@/public/assets/vrv-logo.jpeg"
-import thumb from "@/public/assets/images/profile/2.png";
+import thumb from "@/public/assets/images/profile/3.png";
 
 const Header = () => {
   const onClick = () => {
     document.querySelector("body")?.classList.toggle("dark-theme");
   };
+
+  const session = useSession();
 
   return (
     <div className="header">
@@ -21,12 +22,8 @@ const Header = () => {
             <div className="header-content">
               <div className="header-left">
                 <div className="brand-logo">
-                  <Link href={"/"}>
-                    {/* <Image src={logo} alt="" width={50} height={0}/> */}
-                    {/* <span>Qash</span> */}
-                  </Link>
                 </div>
-                <div className="search">
+                {/* <div className="search">
                   <form onSubmit={(e) => e.preventDefault()}>
                     <div className="input-group">
                       <input
@@ -39,7 +36,7 @@ const Header = () => {
                       </span>
                     </div>
                   </form>
-                </div>
+                </div> */}
               </div>
 
               <div className="header-right">
@@ -51,7 +48,7 @@ const Header = () => {
                     <i className="icofont-sun-alt"></i>
                   </span>
                 </div>
-                <Dropdown className="notification">
+                {/* <Dropdown className="notification">
                   <Dropdown.Toggle>
                     <div className="notify-bell" data-toggle="dropdown">
                       <span>
@@ -115,7 +112,7 @@ const Header = () => {
                       </Link>
                     </div>
                   </Dropdown.Menu>
-                </Dropdown>
+                </Dropdown> */}
 
                 <Dropdown className="profile_log">
                   <Dropdown.Toggle>
@@ -133,23 +130,23 @@ const Header = () => {
                           <Image src={thumb} alt="" width={40} height={38} />
                         </span>
                         <div className="user-info">
-                          <h5>Jannatul Maowa</h5>
-                          <span>Qash.inc@gmail.com</span>
+                          <h5>{session?.data?.user?.username}</h5>
+                          <span>Role: {session?.data?.user?.role}</span>
                         </div>
                       </div>
                     </div>
 
                     <div className="user-balance">
                       <div className="available">
-                        <p>Available</p>
-                        <span>0.00 BTC</span>
+                        <p>Status</p>
+                        <span>{session?.data?.user.status}</span>
                       </div>
                       <div className="total">
-                        <p>Total</p>
-                        <span>0.00 USD</span>
+                        <p>User Id</p>
+                        <span>{session?.data?.user?.id}</span>
                       </div>
                     </div>
-                    <Link href={"profile"} className="dropdown-item">
+                    {/* <Link href={"profile"} className="dropdown-item">
                       <i className="icofont-ui-user"></i>Profile
                     </Link>
                     <Link href={"/wallet"} className="dropdown-item">
@@ -163,7 +160,7 @@ const Header = () => {
                     </Link>
                     <Link href={"/lock"} className="dropdown-item">
                       <i className="icofont-lock"></i>Lock
-                    </Link>
+                    </Link> */}
                     <Link onClick={()=>signOut()} href={"/"} className="dropdown-item logout">
                       <i className="icofont-logout"></i> Logout
                     </Link>

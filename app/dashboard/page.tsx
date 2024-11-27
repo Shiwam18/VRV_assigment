@@ -6,10 +6,12 @@ const tradePage = () => {
 
   
   return (
-    <>
+    <div className="content-body">
+      <div className="container">
+        <Trade />
+      </div>
       
-      <Trade />
-    </>
+    </div>
   );
 };
 
