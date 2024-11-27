@@ -1,6 +1,5 @@
-import { url } from "inspector";
 import { getToken } from "next-auth/jwt";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export default async function middleware(req:any){
 
@@ -13,5 +12,5 @@ export default async function middleware(req:any){
 
 }
 export const config = {
-    matcher: ['/dashboard/:path*']
+    matcher: ['/dashboard/:path*', '/dashboard']
 };
