@@ -1,5 +1,5 @@
 "use server"
-import { Permission, PrismaClient, Role, userStatus } from "@prisma/client";
+import { PrismaClient, userStatus } from "@prisma/client";
 import bcrypt from "bcrypt"
 const prisma = new PrismaClient();
 
